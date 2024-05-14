@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #07beb8;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 6vmin;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vmin;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    margin-bottom: 2vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    font-size: 8vmin;
+    background-color: white;
+    color: #232425;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;  /* Add transition */
+}
+
+.box:hover {
+    background-color: black; 
+    box-shadow: 0 0 1.5rem white;
+    color: white;
+}
+
+#resetbtn, #newbtn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#resetbtn:hover, #newbtn:hover {
+    background-color: white;
+    color: black;
+}
+
+#msg {
+    color: white;
+    font-size: 5vmin;
+}
+
+.msgcontainer {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes bounceAnimation {
+    0% {
+        transform: translateY(-40px); /* Initial position: move elements up by 50px */
+        opacity: 0; /* Start with opacity 0 */
+    }
+    70% {
+        transform: translateY(10px); /* Bounce down by 10px */
+        opacity: 1; /* Full opacity */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
+/* Apply bounce animation to headings */
+h1, h2, h3, h4, h5, h6 {
+    animation: bounceAnimation 0.8s ease forwards;
+}
+
+/* Apply bounce animation to game boxes */
+.box {
+    animation: bounceAnimation 0.8s ease forwards;
+    animation-delay: 0.2s; /* Delay each box animation */
+}
+
+/* Apply bounce animation to buttons */
+#resetbtn, #newbtn {
+    animation: bounceAnimation 0.8s ease  forwards;
+    animation-delay: 0.4s; /* Delay each button animation */
+}
